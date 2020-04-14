@@ -1,6 +1,7 @@
 package com.vrcorp.chordgitarindonesia.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.vrcorp.chordgitarindonesia.KategoriActivity;
 import com.vrcorp.chordgitarindonesia.R;
 
 import java.util.ArrayList;
@@ -41,14 +43,10 @@ public class TopDuniaAdapter extends RecyclerView.Adapter<TopDuniaAdapter.MyView
         CardView cardBaru;
         public MyViewHolder(View view) {
             super(view);
-            //this.bg = view.findViewById(R.id.bg_img);
-            //txtKategori = view.findViewById(R.id.ketgori_home);
-
             txtChart = view.findViewById(R.id.chart);
             txtJudul = view.findViewById(R.id.judul_lagu);
             txtPenyanyi =view.findViewById(R.id.penyanyi);
             cardBaru = view.findViewById(R.id.card_home);
-            //bgPhoto= view.findViewById(R.id.img_home);
         }
     }
 
@@ -78,8 +76,8 @@ public class TopDuniaAdapter extends RecyclerView.Adapter<TopDuniaAdapter.MyView
         holder.cardBaru.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent intent = new Intent(context, DetailActivity.class);
-                //intent.putExtra("url",urlList.get(position));
+                //Intent intent = new Intent(context, KategoriActivity.class);
+                //intent.putExtra("id_album",idChord);
                 //context.startActivity(intent);
             }
         });

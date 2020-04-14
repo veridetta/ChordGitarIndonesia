@@ -20,8 +20,8 @@ import java.util.List;
 
 
 public class DBHelper extends SQLiteOpenHelper {
-    private static final String DATABASE_NAME="chordDB";
-    private static final String TB_LAGU="lagulist";
+    private static final String DATABASE_NAME="chordDB.sqlite";
+    private static final String TB_LAGU="listlagu";
     private static final String TB_CHORD="chordlist";
     private static final int DATABASE_VERSION = 1;
     public static String DATABASE_PATH = "";
@@ -99,31 +99,32 @@ public class DBHelper extends SQLiteOpenHelper {
             mNeedUpdate=true;
         }
     }
-
-    /* Retrive  data from database */
-    public List<DBModel> getFromDB(){
+    public int getTotalKategori(String abjad) {
+        String countQuery = "SELECT  * FROM " + TB_LAGU+" WHERE id_abjad="+"?" ;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(countQuery, new String[] {abjad});
+        int count = cursor.getCount();
+        cursor.close();
+        return count;
+    }
+    public List<DBModel> getLagu(String idBand){
         List<DBModel> modelList = new ArrayList<DBModel>();
-        String query = "select * from "+TB_LAGU;
+        String query = "select * from "+TB_LAGU+" WHERE id_abjad="+"?" ;
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery(query,null);
+        Cursor cursor = db.rawQuery(query,new String[] {idBand});
 
         if (cursor.moveToFirst()){
             do {
                 DBModel model = new DBModel();
-                model.setId(cursor.getString(0));
-                model.setJudul(cursor.getString(1));
-                model.setGambar(cursor.getString(2));
-                model.setUrl(cursor.getString(3));
-                model.setDes(cursor.getString(4));
-                model.setKategori(cursor.getString(5));
-                model.setFavorit(cursor.getString(6));
-                model.setWaktu(cursor.getString(7));
-                model.setPenerbit(cursor.getString(8));
+                model.setId_abjad(cursor.getString(0));
+                model.setId(cursor.getString(1));
+                model.setId_band(cursor.getString(2));
+                model.setNama_band(cursor.getString(3));
+                model.setJudul(cursor.getString(4));
                 modelList.add(model);
             }while (cursor.moveToNext());
         }
-
-        Log.d("student data", modelList.toString());
+        Log.d("Chord data", modelList.toString());
         return modelList;
     }
 }

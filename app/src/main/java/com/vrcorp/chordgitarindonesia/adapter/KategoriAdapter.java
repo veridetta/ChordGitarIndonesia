@@ -1,63 +1,60 @@
 package com.vrcorp.chordgitarindonesia.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.vrcorp.chordgitarindonesia.KategoriActivity;
 import com.vrcorp.chordgitarindonesia.R;
 
 import java.util.ArrayList;
 
-public class AbjadAdapter extends RecyclerView.Adapter<AbjadAdapter.MyViewHolder> {
-    private ArrayList<String> judulList = new ArrayList<>();
-    private ArrayList<String> idChord = new ArrayList<>();
+public class KategoriAdapter extends RecyclerView.Adapter<KategoriAdapter.MyViewHolder> {
+    private ArrayList<String> penyanyiList = new ArrayList<>();
+    private ArrayList<String> idPenyanyiList = new ArrayList<>();
     private Context context;
 
 
-    public AbjadAdapter(Context context,
-                        ArrayList<String> judulList,
-                        ArrayList<String> idChord) {
+    public KategoriAdapter(Context context, ArrayList<String> penyanyiList,
+                           ArrayList<String> idPenyanyiList) {
         this.context = context;
-        this.judulList = judulList;
-        this.idChord = idChord;
+        this.penyanyiList = penyanyiList;
+        this.idPenyanyiList = idPenyanyiList;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView abjad;
+        TextView txtPenyanyi;
         CardView cardBaru;
         public MyViewHolder(View view) {
             super(view);
-            abjad=view.findViewById(R.id.abjad);
+            txtPenyanyi =view.findViewById(R.id.penyanyi);
             cardBaru = view.findViewById(R.id.card_home);
+            //bgPhoto= view.findViewById(R.id.img_home);
         }
     }
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.abjad_list, parent, false);
+                .inflate(R.layout.kategori_list, parent, false);
         return new MyViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
-        holder.abjad.setText(judulList.get(position));
+        //holder.txtKategori.setText("Terakhir Dimainkan");
+        holder.txtPenyanyi.setText(penyanyiList.get(position));
         holder.cardBaru.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, KategoriActivity.class);
-                intent.putExtra("id_abjad",idChord.get(position));
-                //Toast.makeText(v.getContext(),"Isinya "+idChord.get(position),Toast.LENGTH_LONG).show();
-                context.startActivity(intent);
+                //Intent intent = new Intent(context, DetailActivity.class);
+                //intent.putExtra("url",urlList.get(position));
+                //context.startActivity(intent);
             }
         });
 
@@ -65,6 +62,6 @@ public class AbjadAdapter extends RecyclerView.Adapter<AbjadAdapter.MyViewHolder
 
     @Override
     public int getItemCount() {
-        return judulList.size();
+        return penyanyiList.size();
     }
 }

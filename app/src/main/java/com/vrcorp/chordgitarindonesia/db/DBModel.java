@@ -1,8 +1,8 @@
 package com.vrcorp.chordgitarindonesia.db;
 
 public class DBModel {
-    private String id;
-    private String judul, gambar, url, des, kategori, favorit, penerbit, waktu;
+    private String id, id_abjad, id_band;
+    private String judul, nama_band, isi;
 
     public String getId() {
         return id;
@@ -19,53 +19,29 @@ public class DBModel {
         this.judul = judul;
     }
 
-    public String getGambar() {
-        return gambar;
+    public String getId_abjad() {
+        return id_abjad;
     }
-    public void setGambar(String gambar) {
-        this.gambar = gambar;
+    public void setId_abjad(String id_abjad) {
+        this.id_abjad = id_abjad;
     }
-
-    public String getUrl() {
-        return url;
+    public String getId_band() {
+        return id_band;
     }
-    public void setUrl(String url) {
-        this.url = url;
+    public void setId_band(String id_band) {
+        this.id_band = id_band;
     }
-
-    public String getDes() {
-        return des;
+    public String getNama_band() {
+        return nama_band;
     }
-    public void setDes(String des) {
-        this.des = des;
+    public void setNama_band(String nama_band) {
+        this.nama_band = nama_band;
     }
-
-    public String getKategori() {
-        return kategori;
+    public String getIsi() {
+        return isi;
     }
-    public void setKategori(String kategori) {
-        this.kategori = kategori;
-    }
-
-    public String getFavorit() {
-        return favorit;
-    }
-    public void setFavorit(String favorit) {
-        this.favorit = favorit;
-    }
-
-    public String getPenerbit() {
-        return penerbit;
-    }
-    public void setPenerbit(String penerbit) {
-        this.penerbit = penerbit;
-    }
-
-    public String getWaktu() {
-        return waktu;
-    }
-    public void setWaktu(String waktu) {
-        this.waktu = waktu;
+    public void setIsi(String isi) {
+        this.isi = isi;
     }
 
 }

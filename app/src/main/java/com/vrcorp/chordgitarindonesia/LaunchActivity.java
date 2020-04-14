@@ -86,5 +86,5 @@ public class LaunchActivity extends AppCompatActivity {
             Intent intent = new Intent(LaunchActivity.this,MainActivity.class);
             startActivity(intent);
         }
-        }
+    }
 }
