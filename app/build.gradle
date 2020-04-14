@@ -37,4 +37,8 @@ dependencies {
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
     //new pagview
     implementation 'com.hhl:gridpagersnaphelper:1.0.0'
+    //textnimeted
+    def htextview_version = "0.1.6"
+    implementation "com.hanks:htextview-base:$htextview_version"
+    implementation "com.hanks:htextview-evaporate:$htextview_version"
 }
