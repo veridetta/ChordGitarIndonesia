@@ -83,8 +83,14 @@ public class LaunchActivity extends AppCompatActivity {
         }
         @Override
         protected void onPostExecute(Void result) {
-            Intent intent = new Intent(LaunchActivity.this,MainActivity.class);
-            startActivity(intent);
+
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Intent intent = new Intent(LaunchActivity.this,MainActivity.class);
+                    startActivity(intent);
+                }
+            }, 2000);
         }
     }
 }

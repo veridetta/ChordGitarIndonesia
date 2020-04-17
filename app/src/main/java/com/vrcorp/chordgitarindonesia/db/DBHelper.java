@@ -102,7 +102,8 @@ public class DBHelper extends SQLiteOpenHelper {
     public int getTotalKategori(String abjad) {
         String countQuery = "SELECT  * FROM " + TB_LAGU+" WHERE id_abjad="+"?" ;
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery(countQuery, new String[] {abjad});
+        //Cursor cursor = db.rawQuery(countQuery, new String[] {abjad});
+        Cursor cursor = db.rawQuery("select distinct nama_band from "+TB_LAGU+" WHERE id_abjad='"+abjad+"' ",null);
         int count = cursor.getCount();
         cursor.close();
         return count;
@@ -110,20 +111,21 @@ public class DBHelper extends SQLiteOpenHelper {
     public List<DBModel> getLagu(String idBand){
         List<DBModel> modelList = new ArrayList<DBModel>();
         String query = "select * from "+TB_LAGU+" WHERE id_abjad="+"?" ;
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery(query,new String[] {idBand});
-
+        SQLiteDatabase db = this.getReadableDatabase();
+        //Cursor cursor = db.rawQuery(query,new String[] {idBand});
+        Cursor cursor = db.rawQuery("select distinct nama_band, id_band from "+TB_LAGU+" WHERE id_abjad='"+idBand+"' ",null);
         if (cursor.moveToFirst()){
             do {
                 DBModel model = new DBModel();
-                model.setId_abjad(cursor.getString(0));
-                model.setId(cursor.getString(1));
-                model.setId_band(cursor.getString(2));
-                model.setNama_band(cursor.getString(3));
-                model.setJudul(cursor.getString(4));
+                //model.setId_abjad(cursor.getString(1));
+                //model.setId(cursor.getString(2));
+                model.setId_band(cursor.getString(1));
+                model.setNama_band(cursor.getString(0));
+                //model.setJudul(cursor.getString(4));
                 modelList.add(model);
             }while (cursor.moveToNext());
         }
+        Log.d("Chord data db adalah ", idBand);
         Log.d("Chord data", modelList.toString());
         return modelList;
     }

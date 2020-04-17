@@ -6,121 +6,243 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".KategoriActivity">
-    <androidx.core.widget.NestedScrollView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:layout_gravity="bottom">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <RelativeLayout
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <androidx.core.widget.NestedScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:minHeight="@dimen/_80sdp">
+                android:layout_height="match_parent">
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                    <ImageView
+                    android:layout_height="wrap_content">
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:minHeight="@dimen/_200sdp"
-                        android:background="@color/blue_400"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_marginTop="@dimen/_30sdp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:orientation="vertical"
-                        android:gravity="center">
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:textSize="@dimen/_25sdp"
-                            android:minLines="1"
-                            android:maxLines="3"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:textStyle="bold"
-                            android:textColor="@color/white"
-                            android:text="Lagu dengan huruf awal 'A'"/>
-                    </LinearLayout>
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="@dimen/_6sdp"
-                        android:layout_marginLeft="@dimen/_6sdp"
-                        android:background="@color/white"
-                        app:cardBackgroundColor="@color/white"
-                        app:cardElevation="@dimen/_8sdp"
-                        app:cardMaxElevation="@dimen/_10sdp"
-                        app:cardCornerRadius="@dimen/_13sdp"
-                        app:cardUseCompatPadding="true"
-                        android:padding="@dimen/_8sdp">
+                        android:minHeight="@dimen/_80sdp">
                         <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:minHeight="@dimen/_200sdp"
+                                android:background="@color/blue_400"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_marginTop="@dimen/_30sdp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:minHeight="@dimen/_45sdp"
-                                android:weightSum="10">
-                                <LinearLayout
-                                    android:layout_weight="5"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:layout_gravity="center"
-                                    android:gravity="center">
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:minLines="1"
-                                        android:maxLines="4"
-                                        android:textColor="@color/blue_400"
-                                        android:text="Penyanyi/Band"
-                                        android:textSize="@dimen/_12sdp"/>
-                                </LinearLayout>
-                                <LinearLayout
-                                    android:layout_weight="5"
-                                    android:layout_width="wrap_content"
+                                android:layout_gravity="center"
+                                android:orientation="vertical"
+                                android:paddingLeft="@dimen/_20sdp"
+                                android:paddingRight="@dimen/_20sdp"
+                                android:gravity="center">
+                                <TextView
+                                    android:id="@+id/kategori_jdul"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:paddingLeft="@dimen/_12sdp"
-                                    android:paddingRight="@dimen/_8sdp"
-                                    android:layout_gravity="center_vertical"
-                                    android:orientation="vertical"
-                                    android:gravity="center_vertical">
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:minLines="1"
-                                        android:maxLines="4"
-                                        android:textColor="@color/blue_400"
-                                        android:text="Penyanyi/Band"
-                                        android:textSize="@dimen/_12sdp"/>
-                                </LinearLayout>
+                                    android:textSize="@dimen/_25sdp"
+                                    android:minLines="1"
+                                    android:maxLines="3"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/white"
+                                    android:text="Lagu dengan huruf awal 'A'"/>
                             </LinearLayout>
-                            <androidx.recyclerview.widget.RecyclerView
+                            <androidx.cardview.widget.CardView
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="@color/grey_50"
-                                android:paddingBottom="@dimen/_3sdp"
-                                android:paddingTop="@dimen/_3sdp"
-                                android:paddingLeft="@dimen/_4sdp"
-                                android:paddingRight="@dimen/_4sdp"
-                                android:clipToPadding="false"
-                                android:visibility="visible"
-                                android:id="@+id/rc_kategori"/>
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/_6sdp"
+                                android:layout_marginLeft="@dimen/_6sdp"
+                                android:background="@color/white"
+                                app:cardBackgroundColor="@color/white"
+                                app:cardElevation="@dimen/_8sdp"
+                                app:cardMaxElevation="@dimen/_10sdp"
+                                app:cardCornerRadius="@dimen/_13sdp"
+                                app:cardUseCompatPadding="true"
+                                android:padding="@dimen/_8sdp">
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:minHeight="@dimen/_45sdp"
+                                        android:weightSum="10">
+                                        <LinearLayout
+                                            android:layout_weight="5"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:gravity="center">
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:minLines="1"
+                                                android:maxLines="4"
+                                                android:textColor="@color/blue_400"
+                                                android:text="Penyanyi/Band"
+                                                android:textSize="@dimen/_12sdp"/>
+                                        </LinearLayout>
+                                        <LinearLayout
+                                            android:layout_weight="5"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:paddingLeft="@dimen/_12sdp"
+                                            android:paddingRight="@dimen/_8sdp"
+                                            android:layout_gravity="center_vertical"
+                                            android:orientation="vertical"
+                                            android:gravity="center_vertical">
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:minLines="1"
+                                                android:maxLines="4"
+                                                android:textColor="@color/blue_400"
+                                                android:text="Penyanyi/Band"
+                                                android:textSize="@dimen/_12sdp"/>
+                                        </LinearLayout>
+                                    </LinearLayout>
+                                    <androidx.recyclerview.widget.RecyclerView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@color/grey_50"
+                                        android:paddingBottom="@dimen/_3sdp"
+                                        android:paddingTop="@dimen/_3sdp"
+                                        android:paddingLeft="@dimen/_4sdp"
+                                        android:paddingRight="@dimen/_4sdp"
+                                        android:clipToPadding="false"
+                                        android:visibility="visible"
+                                        android:id="@+id/rc_kategori"/>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/_45sdp"/>
+                                </LinearLayout>
+                            </androidx.cardview.widget.CardView>
+                        </LinearLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingRight="@dimen/_9sdp"
+            android:paddingLeft="@dimen/_9sdp"
+            android:paddingBottom="@dimen/_12sdp"
+            android:gravity="bottom|center"
+            android:orientation="vertical">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cari_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardUseCompatPadding="true"
+                android:visibility="gone"
+                app:cardCornerRadius="@dimen/_18sdp"
+                app:cardBackgroundColor="@color/blue_300">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_4sdp">
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_gravity="center|bottom"
+                        android:gravity="center|bottom"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                        <SearchView
+                            android:focusable="false"
+                            android:focusedByDefault="false"
+                            android:focusableInTouchMode="true"
+                            android:id="@+id/cari_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:iconifiedByDefault="false"
+                            android:inputType="text"
+                            android:maxLines="1" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_filter"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:background="@color/blue_400"
+                android:backgroundTint="@color/blue_400"
+                android:src="@color/drawerArrowColor"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ly_loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#0e111f"
+                    android:alpha="0.7">
+
+                </LinearLayout>
+                <LinearLayout
+                    android:padding="@dimen/_14sdp"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#0e111f"
+                        app:cardBackgroundColor="#0e111f"
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        app:cardUseCompatPadding="true">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/_18sdp"
+                            android:orientation="vertical">
                             <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="@dimen/_45sdp"/>
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center">
+                                <ImageView
+                                    android:layout_width="@dimen/_200sdp"
+                                    android:layout_height="@dimen/_200sdp"
+                                    android:id="@+id/dialog_img" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:id="@+id/txt_isi"
+                                    android:layout_width="match_parent"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/blue_400"
+                                    android:text="Sedang memuat lagu ..."
+                                    android:textSize="@dimen/_14sdp" />
+                            </LinearLayout>
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
                 </LinearLayout>
             </RelativeLayout>
         </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
+    </RelativeLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

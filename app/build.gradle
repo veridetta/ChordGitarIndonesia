@@ -41,4 +41,6 @@ dependencies {
     def htextview_version = "0.1.6"
     implementation "com.hanks:htextview-base:$htextview_version"
     implementation "com.hanks:htextview-evaporate:$htextview_version"
+    // gif dialog
+    implementation "com.bestsoft32.tayyab:tt-fancy-gif-dialog:1.0.2"
 }
